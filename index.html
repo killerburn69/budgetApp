@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./sass/app.css">
+    <script src="https://kit.fontawesome.com/476aa9aedb.js" crossorigin="anonymous"></script>
+    <title>Budget App</title>
+</head>
+<body>
+    <section class="budget-app">
+        <div class="start">
+            <div class="start-bg">
+                <h2 class="start-text">Total Budget</h2>
+                <span class="start-total"></span>
+            </div>
+            <div class="type">
+                <div class="type-title">
+                    <h2 class="type-heading">Category</h2>
+                    <button class="type-prev" >Previous</button>
+                    <button class="type-next" >Next</button>
+                </div>
+                <div class="type-slide">
+                    <!-- <div class="img">
+                        <div class="type-img">
+                            <img src="./img/salary.png" alt="">
+                        </div>
+                        <h2 style="text-align: center; margin-top: 10px;">Salary</h2>
+                    </div>
+                    <div class="img">
+                        <div class="type-img">
+                            <img src="./img/salary.png" alt="">
+                        </div>
+                        <h2 style="text-align: center; margin-top: 10px;">Salary</h2>
+                    </div>
+                    <div class="img">
+                        <div class="type-img">
+                            <img src="./img/salary.png" alt="">
+                        </div>
+                        <h2 style="text-align: center; margin-top: 10px;">Salary</h2>
+                    </div>
+                    <div class="img">
+                        <div class="type-img">
+                            <img src="./img/salary.png" alt="">
+                        </div>
+                        <h2 style="text-align: center; margin-top: 10px;">Salary</h2>
+                    </div>
+                    <div class="img">
+                        <div class="type-img">
+                            <img src="./img/salary.png" alt="">
+                        </div>
+                        <h2 style="text-align: center; margin-top: 10px;">Salary</h2>
+                    </div> -->
+                </div>
+            </div>
+            <div id="add-other">
+                <div class="other-display">
+                    <h1 class="other-heading">Create new</h1>
+                    <input type="text" name="" class="other-input" placeholder="Name ?">
+                    <div class="other-btn">
+                        <button class="other-btn-cancel">Cancel</button>
+                        <button class="other-btn-new" type="button" onclick="submitOther()">Create new</button>
+                    </div>
+                </div>
+            </div>
+            <div id="add-choose">
+                <div class="choose-display">
+                    <h1 class="choose-heading">Create new Salary</h1>
+                    <div class="choose-input">
+                        <input type="number" name="" class="many-input" placeholder="How many ?">
+                        <input type="text" name="" class="title-input" placeholder="Title ?">
+                    </div>
+                    <textarea name="" id=""rows="5" class="desc-input" placeholder="Description:"></textarea>
+                    <h2 class="choose-subheading">Choose type</h2>
+                    <div class="choose-check">
+                        <div class="choose-income">
+                            <input type="radio" name="radio-choose" checked=true class="income-radio" value="income">
+                            <span>Is this your income</span>
+                        </div>
+                        <div class="choose-cost">
+                            <input type="radio" name="radio-choose" class="cost-radio" value="cost">
+                            <span>Is this your cost</span>
+                        </div>
+                    </div>
+                    <div class="choose-btn">
+                        <button class="choose-btn-cancel">Cancel</button>
+                        <button class="choose-btn-new" type="button" onclick="submitChoose()">Create new</button>
+                    </div>
+                </div>
+            </div>
+            <div class="list">
+                <div class="income">
+                    <h1>Income</h1>
+                    <div class="list-income">
+                        <!-- <div class="income-item">
+                            <img src="./img/shopping.png" alt="" class="income-img">
+                            <div class="income-text">
+                                <h2>Shopping income</h2>
+                                <span>$3</span>
+                                <p>Create at: Wed Jan 26 2022</p>
+                            </div>
+                            <i class="fas fa-trash-alt trash"></i>
+                        </div> -->
+                    </div>
+                    
+                </div>
+                <div class="cost">
+                    <h1>Cost</h1>
+                    <div class="list-cost">
+                        <!-- <div class="cost-item">
+                            <img src="./img/shopping.png" alt="" class="cost-img">
+                            <div class="cost-text">
+                                <h2>Shopping cost</h2>
+                                <span>$3</span>
+                                <p>Create at: Wed Jan 26 2022</p>
+                            </div>
+                            <i class="fas fa-trash-alt trash"></i>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="list-income-box">
+                <div class="list-income-overplay">
+                    <i class="fas fa-arrow-circle-left" id="pagination-prev"></i>
+                    <div class="income-box">
+                        <div class="income-box-heading">
+                            <h2 class="box-money"></h2>
+                            <h2 class="box-heading"></h2>
+                        </div>
+                        <div class="income-box-list">
+                            <!-- <div class="box-item">
+                                <img src="./img/calendar.png" alt="">
+                                <div class="box-text">
+                                    <h2>month salary: $400</h2>
+                                    <span>salary Bonus</span>
+                                    <p>Create at: Wed Jan 26 2022</p>
+                                </div>
+                            </div>
+                            <div class="box-item">
+                                <img src="./img/calendar.png" alt="">
+                                <div class="box-text">
+                                    <h2>month salary: $400</h2>
+                                    <span>salary Bonus</span>
+                                    <p>Create at: Wed Jan 26 2022</p>
+                                </div>
+                            </div> -->
+                        </div>
+                        <button class="box-close">Close</button>
+                    </div>
+                    <i class="fas fa-arrow-circle-right" id="pagination-next"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="./app.js"></script>
+</body>
+</html>
