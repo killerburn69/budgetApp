@@ -67,6 +67,7 @@ const incomeItem = document.querySelectorAll('.income-item')
 const costItem = document.querySelectorAll('.cost-item')
 const nextPagination = document.querySelector('#pagination-next')
 const prevPagination = document.querySelector('#pagination-prev')
+const boxBorderItem = document.querySelector('.income-box')
 let current = 0;
 let id = 0
 let totalPrice = 0
@@ -140,7 +141,7 @@ function transformSlide(){
 }
 //next Slide
 btnNext.addEventListener('click', function(){
-    current++;
+    current = current+2;
     transformSlide()
     const otherType = document.querySelector('.otherType')
     console.log(otherType)
@@ -152,7 +153,7 @@ btnNext.addEventListener('click', function(){
 })
 //prev Slide
 btnPrev.addEventListener('click', function(){
-    current--;
+    current=current-2;
     transformSlide()   
     toggleChooseForm()
 })
@@ -171,8 +172,20 @@ cancelBox.addEventListener('click', function(){
 //submit other
 function submitOther(){
     const inputOther = document.querySelector('.other-input').value
+    let checkList
+    let nameItemList
+    categoryList.map(item=>{
+        if(inputOther == item.name){
+            checkList = true
+            nameItemList = item.name
+        }
+    })
+    console.log(checkList);
     if(inputOther === ""){
         alert("Yêu cầu nhập nội dung")
+    }
+    else if(checkList === true){
+        alert(`Đã có item ${nameItemList}. Mời nhập lại`)
     }
     else{
         let objectOther = {
@@ -232,6 +245,7 @@ function showIncome(){
     incomeItem.forEach((items, index)=>{
         items.addEventListener('click', function(){
             boxModel.style.display = 'block'
+            boxBorderItem.classList.remove('costBox')
             showPagination(items.className)
             showMoneyBox(boxMoneyListHeading[index].textContent, boxListHeading[index].textContent)
             
@@ -262,6 +276,7 @@ function showCost(){
     costItem.forEach((items, index)=>{
         items.addEventListener('click', function(){
             boxModel.style.display = 'block'
+            boxBorderItem.classList.add('costBox')
             showPagination(items.className)
             showMoneyBox(boxMoneyListHeading[index].textContent, boxListHeading[index].textContent)
         })

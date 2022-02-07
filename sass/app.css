@@ -620,4 +620,8 @@ body {
   font-size: 25px;
   cursor: pointer;
 }
+
+.income-box.costBox {
+  border-top: 10px solid #ce98ee;
+}
 /*# sourceMappingURL=app.css.map */
