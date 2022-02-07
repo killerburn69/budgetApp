@@ -203,6 +203,7 @@ function toggleChooseForm(){
             document.querySelector('#add-choose').style.display='block'
             objectHandle.image = imageList[index].attributes.src.value
             objectHandle.text = headingList[index].textContent
+            document.querySelector('.choose-heading span').innerHTML = headingList[index].textContent
         })
     })
 }
