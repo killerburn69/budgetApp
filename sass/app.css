@@ -430,11 +430,11 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 20px;
-  padding: 10px;
   min-width: -webkit-max-content;
   min-width: -moz-max-content;
   min-width: max-content;
+  gap: 20px;
+  padding: 10px;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
@@ -460,7 +460,7 @@ body {
 
 .cost-span-heading {
   display: inline-block;
-  width: 100px;
+  max-width: 100px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
