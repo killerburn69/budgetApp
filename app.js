@@ -71,7 +71,7 @@ const boxBorderItem = document.querySelector('.income-box')
 let current = 0;
 let id = 0
 let totalPrice = 0
-
+let translate = 0
 if(!localStorage.getItem('category-list')){
     localStorage.setItem("category-list", JSON.stringify(category_lists))
 }
@@ -106,24 +106,32 @@ function showSlide(){
             `
     })
     typeSlide.innerHTML=html.join('')
-    const categoryListDom = document.querySelectorAll('.img')
-    categoryListDom.forEach((item, index)=>{
-        if(current <= index && index <current+5){
-            item.classList.remove('hide')
-        }
-        else{
-            item.classList.add('hide')
-        }
-    })
+    // const categoryListDom = document.querySelectorAll('.img')
+    // categoryListDom.forEach((item, index)=>{
+    //     // if(current <= index && index <current+5){
+    //     //     // item.classList.remove('hide')
+    //     //     console.log(translate)
+    //     // }
+    //     // else{
+    //     //     // item.classList.add('hide')
+    //     //     console.log(translate)
+    //     // }
+    //     // // translate = translate - 240
+    //     // // console.log(`translate(${translate}px)`)
+    //     item.style.transform = `translateX(${translate}px)`
+    // })
+    typeSlide.style.transform = `translateX(${translate}px)`
 }
 
 //di chuyen slide
 function transformSlide(){
     if(current > categoryList.length - 5){
         current = categoryList.length - 5
+        translate=current*-120
     }
     if(current < 0){
         current = 0
+        translate = 0
     }
     if(current === 0){
         btnPrev.classList.add('disableBtn')
@@ -141,7 +149,9 @@ function transformSlide(){
 }
 //next Slide
 btnNext.addEventListener('click', function(){
-    current = current+2;
+    current++;
+    console.log(current)
+    translate = translate - 120
     transformSlide()
     const otherType = document.querySelector('.otherType')
     console.log(otherType)
@@ -153,7 +163,9 @@ btnNext.addEventListener('click', function(){
 })
 //prev Slide
 btnPrev.addEventListener('click', function(){
-    current=current-2;
+    current--;
+    console.log(current)
+    translate = translate + 120
     transformSlide()   
     toggleChooseForm()
 })
@@ -228,7 +240,7 @@ function showIncome(){
                 <div class="income-item ${items.activeId}">
                     <img src=${items.img} alt="" class="income-img">
                     <div class="income-text">
-                        <h2>${items.headingText} income</h2>
+                        <h2><span class="income-span-heading">${items.headingText}</span> income</h2>
                         <span>$${items.value}</span>
                         <p>Create at: ${items.time}</p>
                     </div>
@@ -260,7 +272,7 @@ function showCost(){
                 <div class="cost-item ${items.activeId}">
                     <img src=${items.img} alt="" class="cost-img">
                     <div class="cost-text">
-                        <h2>${items.headingText} cost</h2>
+                        <h2><span class="cost-span-heading">${items.headingText}</span> cost</h2>
                         <span>-$${items.value}</span>
                         <p>Create at: ${items.time}</p>
                     </div>

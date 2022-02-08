@@ -73,11 +73,15 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  height: 100vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .start {
   width: 800px;
-  min-height: 650px;
+  min-height: 580px;
   background-color: white;
 }
 
@@ -113,23 +117,23 @@ body {
   color: #89e1f1;
   border: 5px solid #89e1f1;
   font-size: 30px;
-  font-weight: 400;
+  font-weight: 700;
 }
 
 .type {
-  height: 170px;
+  min-height: 170px;
   background-color: #e7f5f3;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   gap: 50px;
-  padding-top: 20px;
+  padding: 20px;
   overflow: hidden;
 }
 
@@ -139,38 +143,49 @@ body {
   text-align: center;
 }
 
+.type-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 5px;
+}
+
 .type-prev {
   border: none;
-  padding: 10px 20px;
+  padding: 4px 6px;
   background-color: #89e1f1;
   color: white;
   font-weight: 600;
   border-radius: 20px;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
+  font-size: 13px;
 }
 
 .type-next {
   border: none;
-  padding: 10px 20px;
+  padding: 4px 6px;
   background-color: #89e1f1;
   color: white;
   font-weight: 600;
   border-radius: 20px;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
+  font-size: 13px;
 }
 
 .type-prev.disableBtn {
-  color: black;
+  color: #89e1f1;
   background-color: white;
   cursor: context-menu;
+  border: 2px solid #89e1f1;
 }
 
 .type-next.disableBtn {
-  color: black;
+  color: #89e1f1;
   background-color: white;
   cursor: context-menu;
+  border: 2px solid #89e1f1;
 }
 
 .type-slide {
@@ -178,6 +193,12 @@ body {
   display: -ms-flexbox;
   display: flex;
   gap: 20px;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.type-box {
+  overflow: hidden;
 }
 
 .type-img {
@@ -205,10 +226,26 @@ body {
 
 .type .img {
   cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100px;
 }
 
-.type .img.hide {
-  display: none;
+.type .img h2 {
+  height: 23px;
+  width: 100%;
+  overflow: hidden;
+  display: block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .list {
@@ -216,6 +253,7 @@ body {
   display: -ms-flexbox;
   display: flex;
   padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .list-income-box {
@@ -296,6 +334,9 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
   gap: 20px;
   padding: 10px;
   -webkit-transition: all 0.2s ease-in-out;
@@ -307,6 +348,26 @@ body {
   padding: 10px;
   border: 4px solid #89e1f1;
   border-radius: 10px;
+}
+
+.income-text {
+  width: 100%;
+}
+
+.income-text h2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 23px;
+  gap: 5px;
+}
+
+.income-span-heading {
+  display: inline-block;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .income h1 {
@@ -371,6 +432,9 @@ body {
           align-items: center;
   gap: 20px;
   padding: 10px;
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
@@ -380,6 +444,26 @@ body {
   padding: 10px;
   border: 4px solid #ce98ee;
   border-radius: 10px;
+}
+
+.cost-text {
+  width: 100%;
+}
+
+.cost-text h2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 23px;
+  gap: 5px;
+}
+
+.cost-span-heading {
+  display: inline-block;
+  width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .cost-click:hover {
