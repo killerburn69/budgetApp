@@ -247,7 +247,7 @@ function showIncome(){
                     <img src=${items.img} alt="" class="income-img">
                     <div class="income-text">
                         <h2><span class="income-span-heading">${items.headingText}</span> income</h2>
-                        <span>$${items.value}</span>
+                        <span class="income-span-money">$${items.value}</span>
                         <p>Create at: ${items.time}</p>
                     </div>
                 </div>
@@ -257,7 +257,7 @@ function showIncome(){
     })
     incomeList.innerHTML = htmlIncome.join('')
     const incomeItem = document.querySelectorAll('.income-item')
-    const boxMoneyListHeading = document.querySelectorAll('.income-text span')
+    const boxMoneyListHeading = document.querySelectorAll('.income-text .income-span-money')
     const boxListHeading = document.querySelectorAll('.income-text h2')
     console.log(boxMoneyListHeading)
     incomeItem.forEach((items, index)=>{
@@ -279,7 +279,7 @@ function showCost(){
                     <img src=${items.img} alt="" class="cost-img">
                     <div class="cost-text">
                         <h2><span class="cost-span-heading">${items.headingText}</span> cost</h2>
-                        <span>-$${items.value}</span>
+                        <span class="cost-span-money">-$${items.value}</span>
                         <p>Create at: ${items.time}</p>
                     </div>
                 </div>
@@ -289,7 +289,7 @@ function showCost(){
     })
     costList.innerHTML = htmlCost.join('')
     const costItem = document.querySelectorAll('.cost-item')
-    const boxMoneyListHeading = document.querySelectorAll('.cost-text span')
+    const boxMoneyListHeading = document.querySelectorAll('.cost-text .cost-span-money')
     const boxListHeading = document.querySelectorAll('.cost-text h2')
     costItem.forEach((items, index)=>{
         items.addEventListener('click', function(){
