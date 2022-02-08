@@ -2,14 +2,13 @@
 .budget-app{
     display: flex;
     justify-content: center;
-    height: 100vh;
     align-items: center;
+    padding: 20px 0;
 }
 .start{
     width: 800px;
     min-height: 580px;
     background-color: white;
-    
     &-bg{
         background-image: url('../img/bg.jpg');
         background-repeat: no-repeat;

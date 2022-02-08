@@ -172,10 +172,16 @@ btnPrev.addEventListener('click', function(){
 //cancel other model
 cancelOther.addEventListener('click', function(){
         document.querySelector('#add-other').style.display = 'none'
+        document.querySelector('.other-input').value = ""
+
 })
 //cancel choose model
 cancelChoose.addEventListener('click', function(){
     document.querySelector('#add-choose').style.display = 'none'
+    document.querySelector('.many-input').value = ""
+    document.querySelector('.title-input').value = ""
+    document.querySelector('.desc-input').value =""
+    document.querySelector('.income-radio').checked = true
 })
 //cancel box
 cancelBox.addEventListener('click', function(){
